@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE147 HTML FORMS</title>
+</head>
+<body>
+    <header>
+        <h1>Software Engineering Feedback Form</h1>
+    </header>
+    <main>
+        <h3>Register with your email</h3>
+        <p>All information is anonymous and used only for quality assurance.</p>
+
+        <form onSubmit="handlesubmit">
+            <label for="email">Email (required):</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter Email Here"
+                pattern="[\w]+@[\w]+.com"
+                autocomplete="on"
+                required>
+                <div role="alert" aria-live="assertive"></div>
+        <br>
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+            <h3>Take The Survey Below</h3>
+            <p>Please answer as honestly as possible, your feedback is valuable.</p>
+
+        <form onSubmit="handlesubmit">
+            <label for="quantity">Enter the total number of hours out of class you spent on class material (1 to 10):</label>
+            <! BONUS included below -->
+            <input type="number" id="quantity" name="quantity" min="0" max="10" step="1">
+            <div role="alert" aria-live="assertive"></div>
+        <br>
+        
+            <label for="rating">Rate your experience (1 to 10):</label>
+            <! i added an initial value of 5 to start, I also included oninput - it updates the output element to display the current value in real-time. -->
+            <input type="range" id="rating" name="rating" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+            <! this is going to let our user see the number they've slided to-->
+            <output>5</output>
+            <div role="alert" aria-live="assertive"></div>
+        <br>
+            <! BONUS: we are using rgb for colors and I gave it an initial color of red -->
+            <label for="favcolor">Select your favorite color:</label>
+            <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+        <br>
+        <br>
+        <label for="language">Choose your favorite programming language</label>
+        <select name="language" id="language">
+            <option value="Python">Python</option>
+            <option value="HTML">HTML</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="SQL">SQL</option>
+        </select>
+        <div role="alert" aria-live="assertive"></div>
+        <br>
+        <label for="multiple_platforms">Choose your preferred platform:</label>
+        <input type="checkbox" id="platform1" name="platform1" value="web">
+        <label for="platform1">web</label>
+        <input type="checkbox" id="platform2" name="platform2" value="mobile">
+        <label for="platform2">mobile</label>
+        <input type="checkbox" id="platform3" name="platform3" value="desktop">
+        <label for="platform3">desktop</label>
+        <div role="alert" aria-live="assertive"></div>
+        <br>
+        <p>Choose your expertise level:</p>
+        <form>
+            <input type="radio" id="beginner" name="expert_level" value="Beginner">
+            <label for="beginner">Beginner</label>
+            <br>
+            <input type="radio" id="intermediate" name="expert_level" value="Intermediate">
+            <label for="intermediate">Intermediate</label>
+            <br>
+            <input type="radio" id="advanced" name="expert_level" value="Advanced">
+            <label for="advanced">Advanced</label> 
+            <div role="alert" aria-live="assertive"></div>
+        </form>
+
+        
+            
+
+            <h4>Enter Today's Date to Submit</h4>
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" min="2024-01-01">  <! if you want to put a date range you can use min/max -->
+                <div role="alert" aria-live="assertive"></div>
+                <br>
+        </form>
+    </main>
+
+
+</body>
+</html>
